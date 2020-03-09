@@ -1,19 +1,17 @@
 #!/bin/sh
-
+#Kør brug sudo bash ./program_setup.sh
 sudo -n true
 
 sudo apt update -y
 echo Installing essentials
-while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
-    curl
-    wget
-    gcc
-    snapd
-    git
-    firefox
-    neovim
-EOF
-)
+
+sudo apt-get install -y curl
+sudo apt-get install -y wget
+sudo apt-get install -y gcc
+sudo apt-get install -y snapd
+sudo apt-get install -y git
+sudo apt-get install -y firefox
+sudo apt-get install -y neovim
 
 echo Installing snap packages
 sudo snap install pycharm-professional --classic
@@ -30,7 +28,7 @@ mkdir Brogramming
 echo Installing docker engine
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
-sudo apt-get install \
+sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -46,7 +44,7 @@ sudo add-apt-repository \
 
 sudo apt-get update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 #install docker compose
 echo Installing docker compose
@@ -56,9 +54,14 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 #install virtual box
 echo Installing virtualbox
-sudo apt install virtualbox
+sudo apt install -y virtualbox
 
 #install zsh
 echo Installing ZSH
-sudo apt install zsh
+sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo Updating
+sudo apt upgrade
+
+exit
