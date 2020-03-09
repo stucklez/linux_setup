@@ -59,7 +59,7 @@ sudo apt install -y virtualbox
 #install zsh
 echo Installing ZSH
 sudo apt install -y zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c -y "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo Updating
 sudo apt upgrade
