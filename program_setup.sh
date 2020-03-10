@@ -1,8 +1,9 @@
 #!/bin/sh
 #Kør brug sudo bash ./program_setup.sh
 sudo -n true
-
+echo Updating
 sudo apt update -y
+sudo apt upgrade -y
 echo Installing essentials
 
 sudo apt-get install -y curl
@@ -60,8 +61,5 @@ sudo apt install -y virtualbox
 echo Installing ZSH
 sudo apt install -y zsh
 sh -c -y "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo Updating
-sudo apt upgrade
 
 exit
