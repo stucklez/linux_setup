@@ -13,6 +13,7 @@ sudo apt-get install -y snapd
 sudo apt-get install -y git
 sudo apt-get install -y firefox
 sudo apt-get install -y neovim
+sudo apt install -y python3-venv python3-pip
 
 echo Installing snap packages
 sudo snap install pycharm-professional --classic
@@ -20,7 +21,7 @@ sudo snap install clion --classic
 sudo snap install intellij-idea-ultimate --classic
 sudo snap install code --classic
 sudo snap install spotify
-
+sudo snap install pypy3 --classic
 echo Creating Brogramming
 cd Documents
 mkdir Brogramming
