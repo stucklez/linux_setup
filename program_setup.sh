@@ -23,6 +23,8 @@ sudo snap install code --classic
 sudo snap install spotify
 sudo snap install pypy3 --classic
 echo Creating Brogramming
+
+cd
 cd Documents
 mkdir Brogramming
 
@@ -62,5 +64,11 @@ sudo apt install -y virtualbox
 echo Installing ZSH
 sudo apt install -y zsh
 sh -c -y "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#install mongodb
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
 
 exit
